@@ -23,20 +23,20 @@ public class Solution {
 
 			switch (choice) {
 
-				case 1 :
+				case 1:
 					addStudent(records);
 					break;
-				case 2 :
+				case 2:
 					records.sortBasedOnBranch(records);
 					records.printRecords(records);
 					break;
 
-				case 3 :
+				case 3:
 					records.sortBasedOnID(records);
 					records.printRecords(records);
 					break;
 
-				default :
+				default:
 					System.exit(0);
 			}
 		}

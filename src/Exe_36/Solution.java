@@ -6,8 +6,8 @@ import java.util.HashSet;
 public class Solution {
 
 	public static void main(String[] args) {
-		int[] Array1 = new int[]{10, 5, 20, 15, 25, 30};
-		int[] Array2 = new int[]{50, 12, 5, 30, 15, 70};
+		int[] Array1 = new int[] { 10, 5, 20, 15, 25, 30 };
+		int[] Array2 = new int[] { 50, 12, 5, 30, 15, 70 };
 		Integer[] array = uniqElements(Array1, Array2);
 
 		for (Integer val : array) {

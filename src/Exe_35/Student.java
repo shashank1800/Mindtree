@@ -45,7 +45,7 @@ public class Student {
 	public void setStudentScore(int studentScore) {
 		this.studentScore = studentScore;
 	}
-	
+
 	@Override
 	public String toString() {
 		return this.studentName + " scored " + this.studentScore;

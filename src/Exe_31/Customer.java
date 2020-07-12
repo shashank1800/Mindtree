@@ -1,17 +1,15 @@
 package Exe_31;
 
 public class Customer {
-	
+
 	private String name;
 	private String mobNo;
 	private double feedbackRating;
 
 	public Customer() {
 	}
-	
 
 	public Customer(String name, String mobNo, double feedbackRating) {
-		super();
 		this.name = name;
 		this.mobNo = mobNo;
 		this.feedbackRating = feedbackRating;
@@ -40,7 +38,5 @@ public class Customer {
 	public void setFeedbackRating(double feedbackRating) {
 		this.feedbackRating = feedbackRating;
 	}
-	
-	
 
 }

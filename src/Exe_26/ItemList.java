@@ -11,8 +11,7 @@ public class ItemList<T> extends ArrayList<T> {
 		for (Item item : itemList) {
 			int price = item.getItemPrice();
 			int quantity = item.getItemQuantity();
-			System.out.println(item.getItemName() + "  " + price + " * "
-					+ quantity + " = " + price * quantity);
+			System.out.println(item.getItemName() + "  " + price + " * " + quantity + " = " + price * quantity);
 
 			totalPrice += (price * quantity);
 
