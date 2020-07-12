@@ -13,8 +13,8 @@ public class StudentRecords<T> extends ArrayList<T> {
 				String name1 = records.get(j).getStudentBranch();
 				String name2 = records.get(j + 1).getStudentBranch();
 
-				if (name1.compareTo(name2) > 0) 
-					swap(records, j, j+1);
+				if (name1.compareTo(name2) > 0)
+					swap(records, j, j + 1);
 
 			}
 		}
@@ -30,8 +30,8 @@ public class StudentRecords<T> extends ArrayList<T> {
 				int id1 = records.get(j).getStudentId();
 				int id2 = records.get(j + 1).getStudentId();
 
-				if (id1 > id2) 
-					swap(records, j, j+1);
+				if (id1 > id2)
+					swap(records, j, j + 1);
 
 			}
 		}
@@ -44,7 +44,7 @@ public class StudentRecords<T> extends ArrayList<T> {
 			System.out.println(student);
 
 	}
-	
+
 	private void swap(StudentRecords<Student> records, int m, int n) {
 		Student temp1 = records.get(m);
 		Student temp2 = records.get(n);

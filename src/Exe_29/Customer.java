@@ -9,20 +9,17 @@ public class Customer {
 	private double custBalance;
 	
 	public Customer(int custId, String custName, String custAddress) {
-		super();
 		this.custId = custId;
 		this.custName = custName;
 		this.custAddress = custAddress;
 	}
 	
 	public Customer(int custId, String custName) {
-		super();
 		this.custId = custId;
 		this.custName = custName;
 	}
 	
 	public Customer(int custId, String custName, String custAddress, String accType, double custBalance) {
-		super();
 		this.custId = custId;
 		this.custName = custName;
 		this.custAddress = custAddress;

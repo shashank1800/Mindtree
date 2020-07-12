@@ -1,21 +1,21 @@
 package Exe_28;
 
-
 public class Book {
 
 	private String bookTitle;
 	private double price;
 	private int yearOfPublicaiton;
 	private String authorsName;
-	
-	public Book(String authorsName,String bookTitle, double price, int yearOfPublicaiton) {
-		
+
+	public Book(String authorsName, String bookTitle, double price,
+			int yearOfPublicaiton) {
+
 		this.bookTitle = bookTitle;
 		this.price = price;
 		this.yearOfPublicaiton = yearOfPublicaiton;
 		this.authorsName = authorsName;
 	}
-	
+
 	public String getBookTitle() {
 		return bookTitle;
 	}
@@ -43,13 +43,8 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Author : " + this.authorsName + "\n"+ 
-				"Price : " + this.price + "\n"+ 
-				"Year of Publication : " + this.yearOfPublicaiton;
+		return "Author : " + this.authorsName + "\n" + "Price : " + this.price
+				+ "\n" + "Year of Publication : " + this.yearOfPublicaiton;
 	}
-	
-	
-	
-	
-	
+
 }

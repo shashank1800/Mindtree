@@ -1,12 +1,12 @@
 package Exe_33;
 
 public class Student {
-	
+
 	private int studentId;
 	private String studentName;
 	private float marks;
 	private boolean secondChance;
-	
+
 	public Student(int studentId, String studentName, boolean secondChance) {
 		super();
 		this.studentId = studentId;
@@ -45,19 +45,18 @@ public class Student {
 	public void setSecondChance(boolean secondChance) {
 		this.secondChance = secondChance;
 	}
-	
+
 	public void identifyMarks(float marks1) {
-		if(!this.secondChance)
+		if (!this.secondChance)
 			this.marks = marks1;
 		System.out.println(this.marks + " assigned");
 	}
-	
+
 	public void identifyMarks(float marks1, float marks2) {
-		if(this.secondChance) 
+		if (this.secondChance)
 			this.marks = Math.max(marks1, marks2);
-		
+
 		System.out.println(this.marks + " assigned");
 	}
-	
 
 }
