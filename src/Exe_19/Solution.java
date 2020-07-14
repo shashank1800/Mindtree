@@ -6,10 +6,9 @@ import java.util.StringTokenizer;
 public class Solution {
 
     /*
-     * 1) Input name1 and name2 2) Split the name1 and name2 where it has space
-     * using StringTokenizer() 3) Join them using StringBuffer (Less complexity
-     * compared to String concatenation)
-     *
+     * 1) Input name1 and name2 2) Split the name1 and name2 where it has space usin
+     * StringTokenizer( 3) Join them using StringBuffer (Less complexity compared to
+     * String concatenation)
      */
 
     public static void main(String[] args) {
