@@ -48,7 +48,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student " + firstName + " " + middleName + " " + lastName + " " + age;
+        return "[ Student : " + firstName + " " + middleName + " " + lastName + " " + age+" ]";
     }
 
     public String getPassword() {

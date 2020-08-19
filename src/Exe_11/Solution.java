@@ -10,31 +10,34 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        System.out.println("1) Triangle ");
-        System.out.println("2) Square ");
-        System.out.println("3) Rectangle ");
-        System.out.println("4) Circle ");
+        while(true) {
+            System.out.println("1) Triangle ");
+            System.out.println("2) Square ");
+            System.out.println("3) Rectangle ");
+            System.out.println("4) Circle ");
 
-        int type = sc.nextInt();
+            int type = sc.nextInt();
 
-        switch (type) {
-            case 1:
-                areaTriangle();
-                break;
-            case 2:
-                areaSquare();
-                break;
-            case 3:
-                areaRectangle();
-                break;
-            case 4:
-                areaCircle();
-                break;
-            default:
-                break;
+            switch (type) {
+                case 1:
+                    areaTriangle();
+                    break;
+                case 2:
+                    areaSquare();
+                    break;
+                case 3:
+                    areaRectangle();
+                    break;
+                case 4:
+                    areaCircle();
+                    break;
+                default:
+                    break;
+            }
+            
         }
 
-        sc.close();
+        
     }
 
     private static void areaTriangle() {

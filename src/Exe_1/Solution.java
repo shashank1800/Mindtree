@@ -20,10 +20,17 @@ public class Solution {
 
     private static double fact(double number) {
         
-        if(number==0 || number==1)
-            return 1;
+        double fact = 1;
         
-        return number * fact(number-1);
+        if(number < 0)
+            return 0;
+        
+        while(number !=1) {
+            fact *= number;
+            number -= 1;
+        }
+        
+        return fact;
     }
 
 }

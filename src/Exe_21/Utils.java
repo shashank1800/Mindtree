@@ -1,37 +1,25 @@
 package Exe_21;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Utils {
 
-    public static final Set<Integer> numberPositions = new HashSet<Integer>() {
-        {
-            add(0);
-            add(3);
-            add(4);
-            add(7);
-            add(8);
-            add(9);
-        }
-    };
+    public static final int[] numberPositions = new int[]{0,3,4,7,8,9};
 
-    public static final Set<Integer> characterPosiotions = new HashSet<Integer>() {
-        {
-            add(1);
-            add(2);
-            add(5);
-            add(6);
-        }
-    };
+    public static final int[] characterPosiotions = new int[]{1,2,5,6};
 
-    public static final Set<String> branchName = new HashSet<String>() {
-        {
-            add("CS");
-            add("IS");
-            add("EC");
-            add("ME");
-        }
-    };
+    public static final String[] branchName = new String[]{"CS","IS","EC","ME"}; 
+    
+    public static boolean contains(int[] array,int num) {
+        for(int i=0;i<array.length;i++)
+            if(array[i]==num)
+                return true;
+        return false;
+    }
+    
+    public static boolean contains(String[] array,String branch) {
+        for(int i=0;i<array.length;i++)
+            if(array[i].equals(branch))
+                return true;
+        return false;
+    } 
 
 }

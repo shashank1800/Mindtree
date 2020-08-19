@@ -16,11 +16,10 @@ public class Solution {
 
     private static void reverseNumber(int number) {
 
-        int reverse = 0;
-        while (number != 0) {
+        int reverse;
+        for (reverse = 0; number != 0; number /= 10) {
             int rem = number % 10;
             reverse = (reverse * 10) + rem;
-            number /= 10;
         }
 
         System.out.println(reverse);

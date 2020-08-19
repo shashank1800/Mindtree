@@ -1,7 +1,5 @@
 package Exe_23;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Solution {
@@ -19,37 +17,72 @@ public class Solution {
 
     public static void printConsecutiveCharacters(String input) {
 
-        HashMap<String, Integer> consec = new HashMap<String, Integer>();
+        String[] consecutive = new String[100];
+        int[] count = new int[100];
+        int position = 0;
 
         for (int i = 0; i < input.length() - 1; i++) {
 
             char currChar = input.charAt(i);
             char nextChar = input.charAt(i + 1);
 
-            if (!Character.isAlphabetic(currChar))
+            if (!isAlphabet(currChar))
                 continue;
 
             else {
-                if (!Character.isUpperCase(currChar))
+                if (!isUpperCase(currChar))
                     currChar = (char) (currChar - 32);
-                if (!Character.isUpperCase(nextChar))
+                if (!isUpperCase(nextChar))
                     nextChar = (char) (nextChar - 32);
             }
 
             if ((nextChar - currChar) == 1) {
+
                 String bothAttached = "" + currChar + nextChar;
-                if (consec.containsKey(bothAttached)) {
-                    consec.put(bothAttached, consec.get(bothAttached) + 1);
+
+                int where = isInArray(consecutive, bothAttached, position);
+
+                if (where != -1) {
+                    consecutive[where] = bothAttached;
+                    count[where] += 1;
                 } else {
-                    consec.put(bothAttached, 1);
+                    consecutive[position] = bothAttached;
+                    count[position] = 1;
+                    position++;
                 }
                 i++;
             }
         }
 
-        for (Map.Entry<String, Integer> entry : consec.entrySet())
-            System.out.println(entry.getKey() + " " + entry.getValue());
+        for (int i = 0; i < position; i++)
+            System.out.println(consecutive[i] + " " + count[i]);
 
+    }
+
+    private static int isInArray(String[] consec, String bothAttached, int size) {
+
+        for (int i = 0; i < size; i++)
+            if (consec[i].equals(bothAttached)) {
+                return i;
+            }
+        return -1;
+    }
+
+    public static boolean isAlphabet(int currChar) {
+
+        if (currChar > 'a' && currChar < 'z')
+            return true;
+        else if (currChar > 'A' && currChar < 'Z')
+            return true;
+
+        return false;
+
+    }
+
+    public static boolean isUpperCase(int currChar) {
+        if (currChar > 'A' && currChar < 'Z')
+            return true;
+        return false;
     }
 
 }

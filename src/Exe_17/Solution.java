@@ -12,7 +12,7 @@ public class Solution {
 
         String initials = "";
         for (int i = 0; i < name.length(); i++)
-            if (name.charAt(i) >= 'A' && name.charAt(i) < 'Z')
+            if (name.charAt(i) >= 65 && name.charAt(i) < 90)
                 initials += name.charAt(i);
 
         System.out.println(initials);

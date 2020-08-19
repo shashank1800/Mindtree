@@ -9,17 +9,17 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter the array size : ");
-        int N = sc.nextInt();
+        int size = sc.nextInt();
 
-        System.out.println("Enter the array elements with space between then");
+        System.out.println("Enter the array elements with space between them");
 
-        int[] array = new int[N];
+        int[] array = new int[size];
 
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < size; i++)
             array[i] = sc.nextInt();
         
         int sum = 0;
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < size; i++)
             sum += array[i];
         
         System.out.println("Sum = "+ sum);

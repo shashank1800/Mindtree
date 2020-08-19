@@ -1,15 +1,8 @@
 package Exe_19;
 
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Solution {
-
-    /*
-     * 1) Input name1 and name2 2) Split the name1 and name2 where it has space usin
-     * StringTokenizer( 3) Join them using StringBuffer (Less complexity compared to
-     * String concatenation)
-     */
 
     public static void main(String[] args) {
 
@@ -30,17 +23,26 @@ public class Solution {
     }
 
     public static String[] swapLastName(String name1, String name2) {
-
-        StringTokenizer st1 = new StringTokenizer(name1);
-        StringTokenizer st2 = new StringTokenizer(name2);
-
-        StringBuffer temp1 = new StringBuffer(st1.nextToken());
-        StringBuffer temp2 = new StringBuffer(st2.nextToken());
-
-        temp1.append(" ").append(st2.nextToken());
-        temp2.append(" ").append(st1.nextToken());
-
-        return new String[] { temp1.toString(), temp2.toString() };
+        
+        String temp1 = "", temp2 = "";
+        int i=0;
+        for(;i<name1.length();i++)
+            if(name1.charAt(i)!=' ')
+                temp1 += name1.charAt(i);
+            else
+                break;
+        
+        int j=0;
+        for(;j<name2.length();j++)
+            if(name2.charAt(j)!=' ')
+                temp2 += name2.charAt(j);
+            else
+                break;
+        
+        temp1 += name2.substring(j);
+        temp2 += name1.substring(i);
+        
+        return new String[] { temp1, temp2};
     }
 
 }

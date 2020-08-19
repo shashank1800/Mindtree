@@ -35,14 +35,14 @@ public class TestUSN {
 
             char currentChar = USN.charAt(i);
 
-            if (Utils.numberPositions.contains(i) && Character.isDigit(currentChar)) {
+            if (Utils.contains(Utils.numberPositions,i) && Character.isDigit(currentChar)) {
                 if (i == 0 && (currentChar != '1' && currentChar != '2'))
                     return false;
 
-            } else if (Utils.characterPosiotions.contains(i) && Character.isUpperCase(currentChar)) {
+            } else if (Utils.contains(Utils.characterPosiotions,i) && Character.isUpperCase(currentChar)) {
                 if (i == 5) {
                     String branch = USN.substring(i, i + 2);
-                    if (!Utils.branchName.contains(branch))
+                    if (!Utils.contains(Utils.branchName,branch))
                         return false;
                     i++;
                 }

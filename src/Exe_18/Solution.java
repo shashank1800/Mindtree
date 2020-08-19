@@ -1,6 +1,5 @@
 package Exe_18;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Solution {
@@ -11,11 +10,11 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
 
         students.add(new Student("Shashank", "G", "Bhat", 22));
-        students.add(new Student("Ram", "N", "Naik", 22));
-        students.add(new Student("Ganesh", "K", "Hegde", 22));
+        students.add(new Student("Ram", "N", "Naik", 20));
+        students.add(new Student("Ganesh", "K", "Hegde", 32));
 
         for (Student student : students)
-            System.out.println(student + " " + student.getPassword());
+            System.out.println(student + " password is " + student.getPassword());
 
         sc.close();
     }

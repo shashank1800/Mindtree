@@ -31,7 +31,7 @@ public class Solution {
                 insertionSort(array);
                 break;
             default:
-                System.exit(0);
+                return;
         }
 
         for (int i = 0; i < array.length; i++)
@@ -55,14 +55,15 @@ public class Solution {
 
     public static void insertionSort(int array[]) {
         int n = array.length;
-        for (int i = 1; i < n; ++i) {
-            int key = array[i];
+        for (int i = 1; i < n; i++) {
+            
             int j = i - 1;
-
+            int key = array[i];
             while (j >= 0 && array[j] > key) {
                 array[j + 1] = array[j];
                 j = j - 1;
             }
+            
             array[j + 1] = key;
         }
     }

@@ -1,7 +1,6 @@
 package Exe_14;
 
 import java.util.Scanner;
-import java.util.TreeSet;
 
 public class Solution {
 
@@ -16,51 +15,57 @@ public class Solution {
         int option = sc.nextInt();
 
         System.out.println("Enter the array size : ");
-        int N = sc.nextInt();
+        int size = sc.nextInt();
 
-        boolean res;
+        boolean result;
 
         switch (option) {
-            case 1:
-                TreeSet<Integer> array1 = new TreeSet<Integer>();
 
-                System.out.println("Enter the array items with space between them");
-                for (int i = 0; i < N; i++)
-                    array1.add(sc.nextInt());
+        case 1:
 
-                System.out.println("Enter the key");
-                int key1 = sc.nextInt();
+            int[] array1 = new int[size];
 
-                res = findElement(array1.toArray(new Integer[array1.size()]), key1);
-                System.out.println(res);
+            System.out.println("Enter the array items with space between them");
+            for (int i = 0; i < size; i++)
+                array1[i] = sc.nextInt();
 
-                break;
+            bubbleSort(array1);
 
-            case 2:
-                TreeSet<String> array2 = new TreeSet<String>();
+            System.out.println("Enter the key");
+            int key1 = sc.nextInt();
 
-                System.out.println("Enter the array items with space between them");
-                for (int i = 0; i < N; i++)
-                    array2.add(sc.next());
+            result = findElement(array1, key1);
+            System.out.println(result);
 
-                System.out.println("Enter the key");
-                String key2 = sc.next();
+            break;
 
-                res = findString(array2.toArray(new String[array2.size()]), key2);
-                System.out.println(res);
+        case 2:
+            String[] array2 = new String[size];
 
-                break;
+            System.out.println("Enter the array items with space between them");
+            for (int i = 0; i < size; i++)
+                array2[i] = sc.next();
 
-            default:
-                System.exit(0);
-                break;
+            bubbleSort(array2);
+
+            System.out.println("Enter the key");
+            String key2 = sc.next();
+
+            result = findString(array2, key2);
+            System.out.println(result);
+
+            break;
+
+        default:
+            System.exit(0);
+            break;
         }
 
         sc.close();
 
     }
 
-    private static boolean findElement(Integer[] array, int key) {
+    private static boolean findElement(int[] array, int key) {
         return findElement(array, key, 0, array.length - 1);
     }
 
@@ -68,13 +73,13 @@ public class Solution {
         return findString(array, key, 0, array.length - 1);
     }
 
-    private static boolean findElement(Integer[] array, int key, int low, int high) {
+    private static boolean findElement(int[] array, int key, int low, int high) {
 
         boolean isFound = false;
 
         if (low <= high) {
 
-            int mid = Math.round((low + high) / 2);
+            int mid = (low + high) / 2;
 
             if (array[mid] == key)
                 return true;
@@ -92,7 +97,7 @@ public class Solution {
         boolean isFound = false;
 
         if (low <= high) {
-            int mid = Math.round((low + high) / 2);
+            int mid = (low + high) / 2;
 
             if (array[mid].equals(key))
                 return true;
@@ -104,6 +109,30 @@ public class Solution {
         }
 
         return false;
+    }
+
+    public static void bubbleSort(int[] array) {
+
+        for (int i = 0; i < array.length - 1; i++)
+            for (int j = 0; j < array.length - i - 1; j++)
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+
+    }
+
+    public static void bubbleSort(String[] array) {
+
+        for (int i = 0; i < array.length - 1; i++)
+            for (int j = 0; j < array.length - i - 1; j++)
+                if (array[j].compareTo(array[j + 1]) > 1) {
+                    String temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+
     }
 
 }

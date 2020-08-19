@@ -8,9 +8,18 @@ public class Solution {
 
         Scanner sc = new Scanner(System.in);
 
-        double[] dInputArray1 = new double[] { 10, 20, 30 };
+        double[] dInputArray1;
         double[] dInputArray2 = new double[] { 20, 50, 30, 70, 80 };
-
+        
+        System.out.println("Enter array size");
+        int size1 = sc.nextInt();
+        
+        dInputArray1 = new double[size1];
+        
+        System.out.println("Enter array space between them ");
+        for(int i=0;i<size1;i++)
+            dInputArray1[i] = sc.nextInt();
+        
         double[] iSumArray;
 
         if (dInputArray1.length < dInputArray2.length)

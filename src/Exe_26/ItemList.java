@@ -1,6 +1,5 @@
 package Exe_26;
 
-import java.util.ArrayList;
 
 public class ItemList<T> extends ArrayList<T> {
 

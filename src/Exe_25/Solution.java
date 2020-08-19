@@ -1,9 +1,6 @@
 package Exe_25;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Solution {
 
@@ -20,24 +17,45 @@ public class Solution {
 
     public static void printTriplet(Integer[] data) {
 
-        Set<Integer> set = new HashSet<Integer>(Arrays.asList(data));
-        Set<String> resltSet = new HashSet<String>();
+        String[] resultSet = new String[100];
+        int index = 0;
 
         for (int i = 0; i < data.length; i++)
-            for (int j = 0; j < data.length; j++) {
+            for (int j = 0; j < data.length; j++)
+                for (int k = 0; k < data.length; k++) {
+                    if (i != j && j!=k && i!=k && data[i] + data[j] == data[k]) {
 
-                int A = data[i] < data[j] ? data[i] : data[j];
-                int B = data[i] < data[j] ? data[j] : data[i];
-                int C = A + B;
+                        int A = data[i] < data[j] ? data[i] : data[j];
+                        int B = data[i] < data[j] ? data[j] : data[i];
+                        int C = A + B;
 
-                String pair = "<" + A + "," + B + "," + C + ">";
+                        String pair = "<" + A + "," + B + "," + C + ">";
 
-                if (i != j && set.contains(C) && !resltSet.contains(pair)) {
-                    System.out.println(pair);
-                    resltSet.add(pair);
+                        if (isNotContains(resultSet,pair)) {
+                            System.out.println(pair);
+                            resultSet[index]=pair;
+                            index++;
+                        }
+                    }
                 }
-            }
+        
+        for(int i=0;i<resultSet.length;i++) {
+            if(resultSet[i]==null)
+                break;
+            System.out.println(resultSet[i]);
+        }
 
+    }
+
+    private static boolean isNotContains(String[] resultSet, String pair) {
+         
+        for(int i=0;i<resultSet.length;i++) {
+            if(resultSet[i]==null)
+                break;
+            if(resultSet[i].equals(pair))
+                return false;
+        }
+        return true;
     }
 
 }

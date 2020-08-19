@@ -38,5 +38,13 @@ public class Solution {
 
         return compressed.toString();
     }
+    
+    public static boolean isUpperCase(int currChar) {
+        if(currChar > 'A' && currChar < 'Z')
+            return true;
+        return false;
+    }
+    
+    
 
 }
