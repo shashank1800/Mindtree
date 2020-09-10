@@ -23,7 +23,7 @@ public class Solution {
         for (int i = 0; i < data.length; i++)
             for (int j = 0; j < data.length; j++)
                 for (int k = 0; k < data.length; k++) {
-                    if (i != j && j!=k && i!=k && data[i] + data[j] == data[k]) {
+                    if (i != j && j != k && i != k && data[i] + data[j] == data[k]) {
 
                         int A = data[i] < data[j] ? data[i] : data[j];
                         int B = data[i] < data[j] ? data[j] : data[i];
@@ -31,31 +31,25 @@ public class Solution {
 
                         String pair = "<" + A + "," + B + "," + C + ">";
 
-                        if (isNotContains(resultSet,pair)) {
+                        if (!isContains(resultSet, pair, index)) {
                             System.out.println(pair);
-                            resultSet[index]=pair;
+                            resultSet[index] = pair;
                             index++;
                         }
                     }
                 }
-        
-        for(int i=0;i<resultSet.length;i++) {
-            if(resultSet[i]==null)
-                break;
-            System.out.println(resultSet[i]);
-        }
 
     }
 
-    private static boolean isNotContains(String[] resultSet, String pair) {
-         
-        for(int i=0;i<resultSet.length;i++) {
-            if(resultSet[i]==null)
-                break;
-            if(resultSet[i].equals(pair))
-                return false;
+    private static boolean isContains(String[] resultSet, String pair, int size) {
+
+        for (int i = 0; i < size ; i++) {
+            if (resultSet[i].equals(pair)) {
+                return true;
+            }
         }
-        return true;
+        
+        return false;
     }
 
 }

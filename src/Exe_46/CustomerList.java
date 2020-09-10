@@ -9,6 +9,7 @@ public class CustomerList<T> extends ArrayList<T> {
     public void customersBasedOnCityName(String cityName) {
         Database instance = Database.getDatabase();
         int count = 0;
+        
         for (Customer customer : instance.customerList)
             if (customer.getCustomerAddress().equals(cityName)) {
                 System.out.println(customer);

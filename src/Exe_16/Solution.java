@@ -18,7 +18,19 @@ public class Solution {
         for (int i = 0; i < N; i++)
             array[i] = sc.nextInt();
 
-        bubbleSort(array);
+        System.out.println("1) Bubble Sort");
+        System.out.println("2) Insertion Sort");
+
+        int choice = sc.nextInt();
+
+        switch (choice) {
+            case 1:
+                bubbleSort(array);
+                break;
+            case 2:
+                insertionSort(array);
+                break;
+        }
 
         for (int i = 0; i < array.length; i++)
             System.out.print(array[i] + " ");
@@ -39,4 +51,20 @@ public class Solution {
 
     }
 
+    public static void insertionSort(int array[]) {
+        int n = array.length;
+        for (int i = 1; i < n; i++) {
+            
+            int j = i - 1;
+            int key = array[i];
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j = j - 1;
+            }
+            
+            array[j + 1] = key;
+        }
+    }
+
 }
+

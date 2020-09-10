@@ -19,6 +19,7 @@ public class Solution {
 
         if (n % 2 == 0 || n < 2)
             return false;
+        
         for (double i = 3; i <= n/2; i += 2) {
             if (n % i == 0)
                 return false;
@@ -27,3 +28,5 @@ public class Solution {
     }
 
 }
+
+// 2, 3, 5, 7, 11, 13, 17, 19, 23 ......

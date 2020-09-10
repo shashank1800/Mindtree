@@ -8,12 +8,12 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
 
         String name = sc.nextLine();
-        welcomeUser(name);
+        greetUser(name);
 
         sc.close();
     }
 
-    private static void welcomeUser(String name) {
+    private static void greetUser(String name) {
         System.out.println("Hello, " + name + "!");
     }
 
