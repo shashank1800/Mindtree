@@ -23,7 +23,7 @@ public class Solution {
                 result.add(array[index]);
             else
                 set.add(array[index]);
-        ;
+        
 
         if (result.size() == 0)
             System.out.println("{-1}");

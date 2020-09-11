@@ -1,8 +1,5 @@
 package Exe_46;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class CustomerList<T> extends ArrayList<T> {
 
@@ -34,14 +31,18 @@ public class CustomerList<T> extends ArrayList<T> {
 
     public void customersNameInSorted() {
         Database instance = Database.getDatabase();
+        
+        for (int i = 0; i < size() - 1; i++) {
+            for (int j = 0; j < size() - i - 1; j++) {
 
-        Collections.sort(instance.customerList, new Comparator<Customer>() {
-            @Override
-            public int compare(Customer o1, Customer o2) {
-                return o1.getCustomerName().compareTo(o2.getCustomerName());
+                String name1 = ((Customer)get(j)).getCustomerName();
+                String name2 = ((Customer)get(j+1)).getCustomerName();
+
+                if (name1.compareTo(name2) > 0)
+                    swap(j, j + 1);
+
             }
-
-        });
+        }
 
         for (Customer customer : instance.customerList)
             System.out.println(customer);

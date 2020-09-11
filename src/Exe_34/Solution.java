@@ -1,6 +1,5 @@
 package Exe_34;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Solution {
@@ -13,7 +12,7 @@ public class Solution {
 
 		while (true) {
 
-			System.out.println("\nEnter choice : ");
+			System.out.println("Enter choice : ");
 			System.out.println("1) Add student record");
 			System.out.println("2) Sort student name based on branch name");
 			System.out.println("3) Sort student based on ID");
@@ -27,13 +26,13 @@ public class Solution {
 					addStudent(records);
 					break;
 				case 2:
-					records.sortBasedOnBranch(records);
-					records.printRecords(records);
+					records.sortBasedOnBranch();
+					System.out.println(records);
 					break;
 
 				case 3:
-					records.sortBasedOnID(records);
-					records.printRecords(records);
+					records.sortBasedOnID();
+					System.out.println(records);
 					break;
 
 				default:
@@ -43,7 +42,7 @@ public class Solution {
 
 	}
 
-	public static void addStudent(ArrayList<Student> records) {
+	public static void addStudent(StudentRecords<Student> records) {
 
 		System.out.println("Enter student ID : ");
 		int studentId = sc.nextInt();

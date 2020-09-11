@@ -1,4 +1,4 @@
-package Exe_34;
+package Exe_46;
 
 import java.util.Iterator;
 
@@ -53,6 +53,15 @@ public class ArrayList<T> implements Iterable<T>{
             index--;
         }
     }
+
+    public void doubleCapacity() {
+        Object temp[] = new Object[capacity * 2];
+        for (int i = 0; i < capacity; i++) {
+            temp[i] = array[i];
+        }
+        array = temp;
+        capacity = capacity * 2;
+    }
     
     public void set(int i, Object element) {
         array[i] = element;
@@ -62,15 +71,6 @@ public class ArrayList<T> implements Iterable<T>{
         Object temp = array[i];
         array[i] = array[j];
         array[j] = temp;
-    }
-
-    public void doubleCapacity() {
-        Object temp[] = new Object[capacity * 2];
-        for (int i = 0; i < capacity; i++) {
-            temp[i] = array[i];
-        }
-        array = temp;
-        capacity = capacity * 2;
     }
 
     public int size() {

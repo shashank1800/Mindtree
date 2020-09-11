@@ -37,7 +37,7 @@ public class BankUserList<T> extends ArrayList<T> {
     public void displaySortedUserBasedOnAccountNumber(BankUserList<BankUser> bankUser) {
         
         for (int i = 0; i < bankUser.size() - 1; i++)
-            for (int j = 0; j < bankUser.size() - i - 1; j++)
+            for (int j = 0; j < size() - i - 1; j++)
                 if (bankUser.get(j).getAccNumber() > bankUser.get(j+1).getAccNumber()  ) {
                     BankUser temp = bankUser.get(j);
                     bankUser.set(j, bankUser.get(j + 1));

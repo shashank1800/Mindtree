@@ -53,8 +53,12 @@ public class Student {
 	}
 
 	public void identifyMarks(float marks1, float marks2) {
-		if (this.secondChance)
-			this.marks = Math.max(marks1, marks2);
+		if (this.secondChance) {
+		    if(marks1 > marks2)
+		        this.marks = marks1;
+		    else
+		        this.marks = marks2;
+		}
 
 		System.out.println(this.marks + " assigned");
 	}

@@ -1,4 +1,4 @@
-package Exe_34;
+package Exe_36;
 
 import java.util.Iterator;
 
@@ -52,16 +52,6 @@ public class ArrayList<T> implements Iterable<T>{
             array[index - 1] = null;
             index--;
         }
-    }
-    
-    public void set(int i, Object element) {
-        array[i] = element;
-    }
-    
-    public void swap(int i, int j) {
-        Object temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
     }
 
     public void doubleCapacity() {

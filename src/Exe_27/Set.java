@@ -1,4 +1,5 @@
-package Exe_51;
+package Exe_27;
+
 
 public class Set<T> {
 
@@ -29,11 +30,19 @@ public class Set<T> {
     public boolean contains(Object element) {
         boolean isContains = false;
 
+        if(!(element instanceof String)) {
         for (int i = 0; i < index; i++)
             if (set[i] == element) {
                 isContains = true;
                 break;
             }
+        }else {
+            for (int i = 0; i < index; i++)
+                if (set[i].equals(element)) {
+                    isContains = true;
+                    break;
+                }
+        }
 
         return isContains;
     }

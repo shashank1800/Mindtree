@@ -30,22 +30,30 @@ public class Employee {
 		return empName;
 	}
 
-	public void setEmpName(String empName) {
-		if (empName != null)
+	public boolean setEmpName(String empName) {
+	    boolean isNull = true;
+		if (empName != null || !empName.isEmpty()) {
 			this.empName = empName;
+			isNull = false;
+		}
 		else
 			System.out.println("Employee name should not be empty");
+		
+		return isNull;
 	}
 
 	public String getEmpDesig() {
 		return empDesig;
 	}
 
-	public void setEmpDesig(String empDesig) {
+	public boolean setEmpDesig(String empDesig) {
 		if (Utils.designationSet.contains(empDesig))
 			this.empDesig = empDesig;
-		else
+		else {
 			System.out.println("Invalid Designation");
+			return false;
+		}
+		return true;
 
 	}
 
@@ -53,12 +61,15 @@ public class Employee {
 		return empDept;
 	}
 
-	public void setEmpDept(String empDept) {
+	public boolean setEmpDept(String empDept) {
 
 		if (Utils.deptSet.contains(empDept))
 			this.empDept = empDept;
-		else
+		else {
 			System.out.println("Invalid Department");
+			return false;
+		}
+		return true;
 	}
 
 }

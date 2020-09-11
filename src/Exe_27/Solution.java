@@ -10,18 +10,33 @@ public class Solution {
 
 		Employee emp = new Employee();
 
-		System.out.println("Enter empID");
+		System.out.println("Enter employee ID");
 		emp.setEmpId(sc.nextInt());
+		sc.nextLine();
+		
+		while(true) {
+		    System.out.println("Enter employee Name");
+		    boolean isNull = emp.setEmpName(sc.nextLine());
+		    if(!isNull)
+		        break;
+		}
 
-		System.out.println("Enter empName");
-		emp.setEmpName(sc.nextLine());
-
-		System.out.println("Enter empDesig");
-		emp.setEmpDesig(sc.nextLine());
-
-		System.out.println("Enter empDepartment");
-		emp.setEmpDept(sc.nextLine());
-
+		while(true) {
+		    System.out.println("Enter employee Designation \nDeveloper, Tester, Lead, Manager");
+	        boolean isValid = emp.setEmpDesig(sc.nextLine());
+	        
+	        if(isValid)
+	            break;
+        }
+		
+		while(true) {
+		    System.out.println("Enter employee Department \nTTH, RCM, Digital, DevOps");
+	        boolean isValid = emp.setEmpDept(sc.nextLine());
+            
+            if(isValid)
+                break;
+        }
+		
 		sc.close();
 	}
 }
