@@ -49,7 +49,7 @@ public class Student {
 	public void identifyMarks(float marks1) {
 		if (!this.secondChance)
 			this.marks = marks1;
-		System.out.println(this.marks + " assigned");
+		System.out.println(this.marks);
 	}
 
 	public void identifyMarks(float marks1, float marks2) {
@@ -60,7 +60,7 @@ public class Student {
 		        this.marks = marks2;
 		}
 
-		System.out.println(this.marks + " assigned");
+		System.out.println(this.marks);
 	}
 
 }

@@ -19,6 +19,7 @@ public class Solution {
 
 	public static void readMatrix(int[][] mat, int N) {
 
+	    System.out.println("Enter matrix : ");
 		for (int i = 0; i < N; i++)
 			for (int j = 0; j < N; j++)
 				mat[i][j] = sc.nextInt();

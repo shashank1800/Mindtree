@@ -6,7 +6,7 @@ public class Solution {
     
     static Scanner sc = new Scanner(System.in);
 
-    static String[] itemName = new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+    static String[] itemName = new String[] { "Item_1", "Item_2", "Item_3", "Item_4", "Item_5" };
     static int[] itemId = new int[] { 5001, 5002, 5003, 5004, 5005 };
     static int[] itemPrice = new int[] { 40, 20, 60, 30, 10 };
     
@@ -52,7 +52,7 @@ public class Solution {
         System.out.println("Id\tName    Price  ");
         System.out.println("-------------------------");
         for (int i = 0; i < itemId.length; i++)
-            System.out.println(itemId[i] + "\t" + itemName[i] + "\t" + itemPrice[i]);
+            System.out.println(itemId[i] + "\t" + itemName[i] + "\t" + itemPrice[i]+" Rs");
         System.out.println("Other   Checkout");
         System.out.println("\nEnter product ID :\n");
     }
